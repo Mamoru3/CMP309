@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")  // <-- Add this line
+    id("kotlin-kapt")
+    alias(libs.plugins.google.gms.google.services)
 
 }
 
@@ -42,6 +43,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.firestore)
     //Other dependencies
     kapt("androidx.room:room-compiler:2.6.1")
 
